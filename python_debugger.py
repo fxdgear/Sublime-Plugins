@@ -4,8 +4,8 @@ BREAK_POINT = "ipdb.set_trace() ################## Break Point #################
 
 class DebugCommand(sublime_plugin.TextCommand):
     """Command to automatically import ipdb and set_trace at the current line"""
-    def run(self, edit, *args, **kwargs):
-
+    def run(self, edit):
+        print edit.__dict__
         # current position to place break point
         current_pos = self.view.sel()[0]
         current_line = self.view.line(current_pos)
@@ -44,7 +44,7 @@ class UndebugCommand(sublime_plugin.TextCommand):
     removal.
 
     """
-    def run(self, edit, *args, **kwargs):
+    def run(self, edit):
         debug_line = self.find_debug_line(sublime.Region(0, self.view.size()))
         while debug_line:
             self.view.erase(edit, debug_line)
