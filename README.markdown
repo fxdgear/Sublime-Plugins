@@ -1,7 +1,7 @@
 Sublime Plugins
 =========
 
-* python_debugger - quickly insert/remove ipdb.set_trace() statements
+* python_debugger - use F7/shift+F7 to insert/remove ipdb.set_trace() statements
 
 Usage
 -----
