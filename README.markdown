@@ -16,7 +16,7 @@ use "F7"/"shift+F7" to insert/remove `ipdb.set_trace()` statements
 
 Usage
 -----
-Copy python_debugger.py to your Sublime Text "User plugins" directory.
+Copy the plugin file (python_debugger.py) and associated keymap file(python_debugger.sublime-keymap) to your Sublime Text "User plugins" directory.
 This is located at:
 
 * Windows:
