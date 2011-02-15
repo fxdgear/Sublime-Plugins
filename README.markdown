@@ -1,7 +1,7 @@
 Sublime Plugins
 =========
 
-* python_debugger - quickly insert ipdb.set_trace() statements
+* python_debugger - quickly insert/remove ipdb.set_trace() statements
 
 Usage
 -----
