@@ -10,7 +10,8 @@ Sublime Plugins
 Use "F7" / "shift+F7" to insert/remove `ipdb.set_trace()` statements on current line.
 Takes into consideration indentation and tab preference.
 
-example:
+#### Example
+
 Before:
     
     import datetime
