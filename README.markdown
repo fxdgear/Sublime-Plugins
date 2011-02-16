@@ -9,6 +9,8 @@ Sublime Plugins
 
 Use "F7" / "shift+F7" to insert/remove `ipdb.set_trace()` statements on current line.
 Takes into consideration indentation and tab preference.
+Enter as many `ipdb.set_trace()` commands as you like. Only one import statement is ever used.
+"shift+f7" will remove _all_ debug statements.
 
 #### Example
 
@@ -25,7 +27,7 @@ Before:
 
 ][ denotes cursor location
 
-After:
+After pressing f7:
 
     import ipdb
     import datetime
@@ -39,6 +41,7 @@ After:
             print datetime.datetime.now()
 
 
+Using shif+f7 will return the code to the "Before" state.
 
 ### Key Bindings
 
