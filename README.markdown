@@ -5,12 +5,22 @@ Sublime Plugins
 
 ## python_debugger
 
+### Usage
+
 use "F7" / "shift+F7" to insert/remove `ipdb.set_trace()` statements
 
-* ipdb is required. 
-   * `pip install ipython`
-   * `pip install ipdb` 
-* NOTE: copy the contets of 'python_debugger.sublime-keymap' to the User defined keymap settings (Preferences | User Key Bindings). I'm not sure what the problem is right now but when tying to use plugin defined keymaps, they don't get loaded right.
+### Key Bindings
+
+In the User Defined keybindings (goto Preferences | User Key Bindings) add the following two keybindings:
+
+	{ "keys": ["f7"], "command": "debug"},
+	{ "keys": ["shift+f7"], "command": "undebug"}
+
+### Dependencies
+ 
+	* Ipython -- `pip install ipython`
+	* ipdb -- `pip install ipdb` 
+
 
  
 
