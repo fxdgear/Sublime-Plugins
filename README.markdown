@@ -7,7 +7,38 @@ Sublime Plugins
 
 ### Usage
 
-use "F7" / "shift+F7" to insert/remove `ipdb.set_trace()` statements
+Use "F7" / "shift+F7" to insert/remove `ipdb.set_trace()` statements on current line.
+Takes into consideration indentation and tab preference.
+
+example:
+
+    Before:
+    
+    import datetime
+
+    class MyClass(object):
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def my_function(self, *args, **kwargs):
+            print date][time.datetime.now()
+
+    ][ denotes cursor location
+
+    After:
+
+    import ipdb
+    import datetime
+
+    class MyClass(object):
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def my_function(self, *args, **kwargs):
+            ipdb.set_trace() ################## Break Point ######################
+            print datetime.datetime.now()
+
+            
 
 ### Key Bindings
 
