@@ -26,7 +26,7 @@ In the User Defined keybindings (goto Preferences | User Key Bindings) add the f
 
 Usage
 -----
-Copy the plugin file (ie. python_debugger.py) and associated keymap file (ie. python_debugger.sublime-keymap) to your Sublime Text "User plugins" directory.
+Copy the plugin file (ie. python_debugger.py) you want to use to your Sublime Text "User plugins" directory.
 This is located at:
 
 * Windows:
