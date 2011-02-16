@@ -11,8 +11,7 @@ Use "F7" / "shift+F7" to insert/remove `ipdb.set_trace()` statements on current 
 Takes into consideration indentation and tab preference.
 
 example:
-
-    Before:
+Before:
     
     import datetime
 
@@ -23,9 +22,9 @@ example:
         def my_function(self, *args, **kwargs):
             print date][time.datetime.now()
 
-    ][ denotes cursor location
+][ denotes cursor location
 
-    After:
+After:
 
     import ipdb
     import datetime
@@ -38,7 +37,7 @@ example:
             ipdb.set_trace() ################## Break Point ######################
             print datetime.datetime.now()
 
-            
+
 
 ### Key Bindings
 
