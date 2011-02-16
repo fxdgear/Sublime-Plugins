@@ -24,7 +24,7 @@ In the User Defined keybindings (goto Preferences | User Key Bindings) add the f
 
  
 
-Usage
+Install
 -----
 Copy the plugin file (ie. python_debugger.py) you want to use to your Sublime Text "User plugins" directory.
 This is located at:
