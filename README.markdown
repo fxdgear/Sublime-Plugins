@@ -64,6 +64,9 @@ In the User Defined keybindings (goto Preferences | User Key Bindings) add the f
 Run External will run the currently selected text (if you have multiple selected regions it only does the first one),
 will attempt to run the text as a subprocess and replace the highlighed text with the results.
 
+If you have any suggestions you'd like to see from run_external please feel free to create an issue, and I'll do my
+best to see if it's something I can produce!
+
 ### Key Bindings
 
 To execute the command you can use the included keymap of "ctrl-r" or you can make your own.
