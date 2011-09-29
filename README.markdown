@@ -59,6 +59,8 @@ In the User Defined keybindings (goto Preferences | User Key Bindings) add the f
 
 ## run_external
 
+### Usage
+
 Run External will run the currently selected text (if you have multiple selected regions it only does the first one),
 will attempt to run the text as a subprocess and replace the highlighed text with the results.
 
@@ -67,6 +69,20 @@ will attempt to run the text as a subprocess and replace the highlighed text wit
 To execute the command you can use the included keymap of "ctrl-r" or you can make your own.
 
     { "keys": ["ctrl+r"], "command": "run_external"}
+    
+### Example:
+
+#### Before:
+
+    ]date[
+    
+> ][ denotes highlighted text
+    
+#### After:
+
+    ]Thu Sep 29 16:27:10 MDT 2011[
+
+> ][ denotes highlighted text
 
 Install
 -----
