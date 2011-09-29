@@ -26,7 +26,7 @@ Before:
         def my_function(self, *args, **kwargs):
             print date][time.datetime.now()
 
-][ denotes cursor location
+> ][ denotes cursor location
 
 After pressing f7:
 
@@ -42,7 +42,7 @@ After pressing f7:
             print datetime.datetime.now()
 
 
-Using shif+f7 will return the code to the "Before" state.
+> Using shif+f7 will return the code to the "Before" state.
 
 ### Key Bindings
 
