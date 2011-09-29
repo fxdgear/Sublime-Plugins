@@ -1,10 +1,12 @@
 [
     {
         "caption": "Run External Command: from highlighted text",
-        "command": "run_external_selected"
+        "command": "run_external",
+        "args": {"selected": true}
     }
     ,{
         "caption": "Run External Command: from entire document",
-        "command": "run_external_entire"
+        "command": "run_external",
+        "args": {"selected": false}
     }
 ]

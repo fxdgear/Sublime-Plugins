@@ -3,8 +3,8 @@
         "id": "tools",
         "children":
         [
-            {"caption": "Execute Selected Inserting Result...", "command": "run_external_selected"},
-            {"caption": "Execute Selected Inserting Result...", "command": "run_external_selected"},  
+            {"caption": "Execute Selected Inserting Result...", "command": "run_external", "args": {"selected": true}}//,
+            //{"caption": "Filter Through Command...", "command": "filter_command"} 
         ]
     }
 ]

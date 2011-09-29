@@ -64,13 +64,18 @@ class RunExternalCommand(sublime_plugin.TextCommand):
     which will then be replaced by the command output.
     """
 
-    def run(self, edit):
-        if self.view.sel()[0].empty():
-            # nothing selected: process the entire file
+    def run(self, edit, **kwargs):
+        if kwargs["selected"] == True:
+            region = self.view.sel()[0]
+        elif kwargs["selected"] == False:
             region = sublime.Region(0L, self.view.size())
         else:
-            # process only selected region
-            region = self.view.sel()[0]
+            if self.view.sel()[0].empty():
+                # nothing selected: process the entire file
+                region = sublime.Region(0L, self.view.size())
+            else:
+                # process only selected region
+                region = self.view.sel()[0]
 
         cmd = self.view.substr(region)
 

@@ -1,5 +1,5 @@
 [
   { "keys": ["f7"], "command": "debug"},
   { "keys": ["shift+f7"], "command": "undebug"},
-  { "keys": ["ctrl+r"], "command": "run_external_selected"}
+  { "keys": ["ctrl+r"], "command": "run_external", "args": {"selected": true}}
 ]
