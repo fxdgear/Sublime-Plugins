@@ -2,6 +2,7 @@ Sublime Plugins
 =========
 
 * python_debugger
+* run_external
 
 ## python_debugger
 
@@ -56,16 +57,25 @@ In the User Defined keybindings (goto Preferences | User Key Bindings) add the f
 	* ipdb -- `pip install ipdb` 
 
 
- 
+## run_external
+
+Run External will run the currently selected text (if you have multiple selected regions it only does the first one),
+will attempt to run the text as a subprocess and replace the highlighed text with the results.
+
+### Key Bindings
+
+To execute the command you can use the included keymap of "ctrl-r" or you can make your own.
+
+    { "keys": ["ctrl+r"], "command": "run_external"}
 
 Install
 -----
-Copy the plugin file (ie. python_debugger.py) you want to use to your Sublime Text "User plugins" directory.
+Checkout this repo into your sublime text 2 Packages directory.
 This is located at:
 
 * Windows:
-    %APPDATA%/Sublime Text 2/Packages/User/
+    %APPDATA%/Sublime Text 2/Packages/
 * OS X:
-    ~/Library/Application Support/Sublime Text 2/Packages/User/
+    ~/Library/Application Support/Sublime Text 2/Packages/
 * Linux:
-    ~/.Sublime Text 2/Packages/User/
+    ~/.Sublime Text 2/Packages/
