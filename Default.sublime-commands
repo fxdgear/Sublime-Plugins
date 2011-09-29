@@ -1,0 +1,10 @@
+[
+    {
+        "caption": "Run External Command: from highlighted text",
+        "command": "run_external_selected"
+    }
+    ,{
+        "caption": "Run External Command: from entire document",
+        "command": "run_external_entire"
+    }
+]

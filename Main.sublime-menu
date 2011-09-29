@@ -1,0 +1,10 @@
+[
+    {
+        "id": "tools",
+        "children":
+        [
+            {"caption": "Execute Selected Inserting Result...", "command": "run_external_selected"},
+            {"caption": "Execute Selected Inserting Result...", "command": "run_external_selected"},  
+        ]
+    }
+]
