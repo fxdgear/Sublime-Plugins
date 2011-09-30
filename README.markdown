@@ -87,6 +87,10 @@ To execute the command you can use the included keymap of "ctrl-r" or you can ma
 
 > ][ denotes highlighted text
 
+### Simple wget support:
+
+There is very simple wget support at the moment and it's incredibly fragile
+
 Install
 -----
 Checkout this repo into your sublime text 2 Packages directory.
