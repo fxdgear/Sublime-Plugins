@@ -1,6 +1,8 @@
 import sublime
 import sublime_plugin
 import subprocess
+import os
+from urlparse import urlparse
 
 BREAK_POINT = "ipdb.set_trace()  ################## Break Point ######################"
 
@@ -65,6 +67,7 @@ class RunExternalCommand(sublime_plugin.TextCommand):
     """
 
     def run(self, edit, **kwargs):
+        wget = False
         if kwargs["selected"] == True:
             region = self.view.sel()[0]
         elif kwargs["selected"] == False:
@@ -78,17 +81,32 @@ class RunExternalCommand(sublime_plugin.TextCommand):
                 region = self.view.sel()[0]
 
         cmd = self.view.substr(region)
+        if cmd.startswith("wget"):
+            wget = True
+            location = "/tmp"
+            u = urlparse(cmd.split(" ")[1])
+            fyle = os.path.join(location, "".join([u.netloc, u.path]))
+            cmd = " ".join(['wget', '-r', '-l', '1', '-p', '-P', location, u.geturl()])
 
         p = subprocess.Popen(cmd,
-            shell=True,
-            bufsize=-1,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            stdin=subprocess.PIPE)
+                             shell=True,
+                             bufsize=-1,
+                             stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE,
+                             stdin=subprocess.PIPE)
 
         output, error = p.communicate(self.view.substr(region).encode('utf-8'))
 
-        if error:
-            sublime.error_message(error.decode('utf-8'))
+        if wget:
+            try:
+                f = open(fyle, 'r')
+                output = f.read()
+                f.close()
+                self.view.replace(edit, region, output.decode('utf-8'))
+            except:
+                sublime.error_message(error.decode('utf-8'))
         else:
-            self.view.replace(edit, region, output.decode('utf-8'))
+            if error:
+                sublime.error_message(error.decode('utf-8'))
+            else:
+                self.view.replace(edit, region, output.decode('utf-8'))
