@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 import subprocess
 import os
-from urlparse import urlparse
+#from urlparse import urlparse
 
 BREAK_POINT = "ipdb.set_trace()  ################## Break Point ######################"
 
@@ -60,53 +60,54 @@ class UndebugCommand(sublime_plugin.TextCommand):
         return None
 
 
-class RunExternalCommand(sublime_plugin.TextCommand):
-    """
-    Runs an external command with the selected text,
-    which will then be replaced by the command output.
-    """
-
-    def run(self, edit, **kwargs):
-        wget = False
-        if kwargs["selected"] == True:
-            region = self.view.sel()[0]
-        elif kwargs["selected"] == False:
-            region = sublime.Region(0L, self.view.size())
-        else:
-            if self.view.sel()[0].empty():
-                # nothing selected: process the entire file
-                region = sublime.Region(0L, self.view.size())
-            else:
-                # process only selected region
-                region = self.view.sel()[0]
-
-        cmd = self.view.substr(region)
-        if cmd.startswith("wget"):
-            wget = True
-            location = "/tmp"
-            u = urlparse(cmd.split(" ")[1])
-            fyle = os.path.join(location, "".join([u.netloc, u.path]))
-            cmd = " ".join(['wget', '-r', '-l', '1', '-p', '-P', location, u.geturl()])
-
-        p = subprocess.Popen(cmd,
-                             shell=True,
-                             bufsize=-1,
-                             stdout=subprocess.PIPE,
-                             stderr=subprocess.PIPE,
-                             stdin=subprocess.PIPE)
-
-        output, error = p.communicate(self.view.substr(region).encode('utf-8'))
-
-        if wget:
-            try:
-                f = open(fyle, 'r')
-                output = f.read()
-                f.close()
-                self.view.replace(edit, region, output.decode('utf-8'))
-            except:
-                sublime.error_message(error.decode('utf-8'))
-        else:
-            if error:
-                sublime.error_message(error.decode('utf-8'))
-            else:
-                self.view.replace(edit, region, output.decode('utf-8'))
+#class RunExternalCommand(sublime_plugin.TextCommand):
+#    """
+#    Runs an external command with the selected text,
+#    which will then be replaced by the command output.
+#    """
+#
+#    def run(self, edit, **kwargs):
+#        wget = False
+#        if kwargs["selected"] == True:
+#            region = self.view.sel()[0]
+#        elif kwargs["selected"] == False:
+#            region = sublime.Region(0L, self.view.size())
+#        else:
+#            if self.view.sel()[0].empty():
+#                # nothing selected: process the entire file
+#                region = sublime.Region(0L, self.view.size())
+#            else:
+#                # process only selected region
+#                region = self.view.sel()[0]
+#
+#        cmd = self.view.substr(region)
+#        if cmd.startswith("wget"):
+#            wget = True
+#            location = "/tmp"
+#            u = urlparse(cmd.split(" ")[1])
+#            fyle = os.path.join(location, "".join([u.netloc, u.path]))
+#            cmd = " ".join(['wget', '-r', '-l', '1', '-p', '-P', location, u.geturl()])
+#
+#        p = subprocess.Popen(cmd,
+#                             shell=True,
+#                             bufsize=-1,
+#                             stdout=subprocess.PIPE,
+#                             stderr=subprocess.PIPE,
+#                             stdin=subprocess.PIPE)
+#
+#        output, error = p.communicate(self.view.substr(region).encode('utf-8'))
+#
+#        if wget:
+#            try:
+#                f = open(fyle, 'r')
+#                output = f.read()
+#                f.close()
+#                self.view.replace(edit, region, output.decode('utf-8'))
+#            except:
+#                sublime.error_message(error.decode('utf-8'))
+#        else:
+#            if error:
+#                sublime.error_message(error.decode('utf-8'))
+#            else:
+#                self.view.replace(edit, region, output.decode('utf-8'))
+#
