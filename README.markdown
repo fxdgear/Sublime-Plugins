@@ -48,7 +48,7 @@ After pressing f7:
 
 ### Key Bindings
 
-In the User Defined keybindings (go to Preferences | User Key Bindings) add the following two keybindings:
+In the User Defined keybindings (go to Preferences | User Key Bindings) add the following two key bindings:
 
 	{ "keys": ["f7"], "command": "debug"},
 	{ "keys": ["shift+f7"], "command": "undebug"}
@@ -124,7 +124,7 @@ In the User Defined keybindings (go to Preferences | User Key Bindings) add the 
     * Ipython -- `pip install ipython`
     * ipdb -- `pip install ipdb`
 
-If you are going to use the "run external" functionality, include this binding as well:
+If you are going to use the "Run External" functionality, include this binding as well:
 
     { "keys": ["ctrl+r"], "command": "run_external"}
 
