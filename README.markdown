@@ -13,10 +13,12 @@ Takes into consideration indentation and tab preference.
 Enter as many `ipdb.set_trace()` commands as you like. Only one import statement is ever used.
 "shift+f7" will remove _all_ debug statements.
 
+**Mac users** need to use the function key: Fn+F7 and Fn+Shift+F7 (see note at the end of Install section).
+
 #### Example
 
 Before:
-    
+
     import datetime
 
     class MyClass(object):
@@ -28,7 +30,7 @@ Before:
 
 > ][ denotes cursor location
 
-After pressing f7:
+After pressing F7:
 
     import ipdb
     import datetime
@@ -42,63 +44,53 @@ After pressing f7:
             print datetime.datetime.now()
 
 
-> Using shif+f7 will return the code to the "Before" state.
+> Using Shift+F7 will return the code to the "Before" state.
 
 ### Key Bindings
 
-In the User Defined keybindings (goto Preferences | User Key Bindings) add the following two keybindings:
+In the User Defined keybindings (go to Preferences | User Key Bindings) add the following two key bindings:
 
-	{ "keys": ["f7"], "command": "debug"},
-	{ "keys": ["shift+f7"], "command": "undebug"}
+    { "keys": ["F7"], "command": "debug"},
+    { "keys": ["Shift+F7"], "command": "undebug"}
 
 ### Dependencies
- 
-	* Ipython -- `pip install ipython`
-	* ipdb -- `pip install ipdb` 
 
+    * Ipython -- `pip install ipython`
+    * ipdb -- `pip install ipdb`
 
-## run_external
-
-### Usage
-
-Run External will run the currently selected text (if you have multiple selected regions it only does the first one),
-will attempt to run the text as a subprocess and replace the highlighed text with the results.
-
-If you have any suggestions you'd like to see from run_external please feel free to create an issue, and I'll do my
-best to see if it's something I can produce!
-
-### Key Bindings
-
-To execute the command you can use the included keymap of "ctrl-r" or you can make your own.
-
-    { "keys": ["ctrl+r"], "command": "run_external"}
-    
-### Example:
-
-#### Before:
-
-    ]date[
-    
-> ][ denotes highlighted text
-    
-#### After:
-
-    ]Thu Sep 29 16:27:10 MDT 2011[
-
-> ][ denotes highlighted text
-
-### Simple wget support:
-
-There is very simple wget support at the moment and it's incredibly fragile
 
 Install
 -----
-Checkout this repo into your sublime text 2 Packages directory.
-This is located at:
+
+Clone this repo into your Sublime Text 2/3 Packages directory. Here are the OS dependent locations (substitute correct version numbers):
+
 
 * Windows:
     %APPDATA%/Sublime Text 2/Packages/
+
 * OS X:
     ~/Library/Application Support/Sublime Text 2/Packages/
+
 * Linux:
     ~/.Sublime Text 2/Packages/
+
+
+The package will not work with the key bindings and dependencies that were mentioned above (and are repeated here in the install section for your convenience). **Mac users** should insert the key bindings as they appear -- actual usage requires you to prepend with the Function key, but the Function key should not be included in the key bindings below.
+
+
+### Key Bindings
+
+In the User Defined keybindings (go to Preferences | User Key Bindings) add the following two keybindings:
+
+    { "keys": ["F7"], "command": "debug"},
+    { "keys": ["Shift+F7"], "command": "undebug"}
+
+### Dependencies
+
+    * Ipython -- `pip install ipython`
+    * ipdb -- `pip install ipdb`
+
+
+###Note to Mac users###
+
+By default, Apple has already assigned some of your function keys. The plugin will work fine with the instructions above, but if you would like to have full control of your keyboard's function keys you can learn how to do that [here](https://support.apple.com/kb/HT3399). The would allow you to insert the debug command with a simple F7 rather an Fn-F7 and to remove the debug commands with Shift-F7 rather than Fn-Shift-F7.
